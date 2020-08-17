@@ -1,7 +1,7 @@
 {
-  "name": "approach-1",
+  "name": "vuetify15-file-upload",
   "version": "1.0.0",
-  "description": "Vuetify baseline layout with VueRouter integration.",
+  "description": "",
   "main": "src/main.js",
   "private": true,
   "scripts": {
