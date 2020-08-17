@@ -1,7 +1,7 @@
 <template>
   <v-card flat class="pa-2 media-file-btn">
     <input
-      ref="mediaInput"
+      ref="fileInput"
       type="file"
       :accept="accept"
       :multiple="multiple"
@@ -16,10 +16,10 @@
       :disabled="disabled"
       @click="showFileSelector"
       :outline="outline"
-      v-if="variant===mediaInputType.vuetifyTwo"
+      v-if="variant===fileInputType.vuetifyTwo"
     ></v-text-field>
     <v-btn
-      v-else-if="variant===mediaInputType.browse"
+      v-else-if="variant===fileInputType.browse"
       :disabled="disabled"
       :color="color"
       @click="showFileSelector"
@@ -32,10 +32,6 @@
 <script>
 export default {
   props: {
-    value: {
-      type: File,
-      default: null
-    },
     accept: {
       type: String,
       default: ""
@@ -54,7 +50,7 @@ export default {
     },
     variant: {
       type: Number,
-      default: 1
+      default: 2
     },
     color: {
       type: String,
@@ -68,12 +64,12 @@ export default {
   data() {
     return {
       fileName: "",
-      mediaInputType: { browse: 2, vuetifyTwo: 1 }
+      fileInputType: { browse: 2, vuetifyTwo: 1 }
     };
   },
   methods: {
     showFileSelector() {
-      this.$refs.mediaInput.click();
+      this.$refs.fileInput.click();
     },
     uploadFile(e) {
       const file = e.target.files[0];
